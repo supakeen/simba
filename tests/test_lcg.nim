@@ -32,8 +32,7 @@ suite "simba/lcg/Java":
     let
       prng = newJava()
       vals = @[next(prng), next(prng), next(prng), next(prng), next(prng)]
-    echo($vals)
-    assert vals == @[1015568748'u64, 1586005467'u64, 2165703038'u64, 3027450565'u64, 217083232'u64]
+    assert vals == @[384748'u64, 2002481751'u64, 4237743325'u64, 3008360755'u64, 4165058753'u64]
 
 
 suite "simba/lcg/CarbonLib":
@@ -65,5 +64,4 @@ suite "simba/lcg/Musl":
     let
       prng = newMusl()
       vals = @[next(prng), next(prng), next(prng), next(prng), next(prng)]
-    echo($vals)
-    assert vals == @[1015568748'u64, 1586005467'u64, 2165703038'u64, 3027450565'u64, 217083232'u64]
+    assert vals == @[1481765933'u64, 2009839609'u64, 734534264'u64, 410517546'u64, 836499822'u64]
