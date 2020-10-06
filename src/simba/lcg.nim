@@ -16,7 +16,7 @@
 import math
 
 type
-  LCG[T] = ref object of RootObj
+  LCG[T: uint32 | uint64] = ref object of RootObj
     ## State for an LCG with its parameters, `a`, `c`, and `m`. We keep a bit
     ## more space to store which bits should be output if any limits apply.
     a: T
