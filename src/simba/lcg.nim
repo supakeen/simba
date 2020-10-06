@@ -26,7 +26,9 @@ type
     msb: T
     lsb: T
 
+
 proc next*[T](state: LCG[T]): T =
+  ## Get the next value for an LCG
   var next: T
 
   if state.m != 0:
@@ -43,6 +45,12 @@ proc next*[T](state: LCG[T]): T =
   state.seed = next
 
   return next
+
+
+proc seed*[T](state: LCG[T], seed: T) =
+  ## Seed an LCG
+  state.seed = seed
+
 
 proc newRANDU*(seed: uint32 = 1): LCG[uint32] =
   ## IBM's RANDU is widely considered to be one of the most ill-conceived random
