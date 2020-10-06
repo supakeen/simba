@@ -36,15 +36,11 @@ proc next*[T](state: LCG[T]): T =
   else:
     next = (state.a * state.seed + state.c)
 
-  echo(next)
-
   if state.msb != 0:
     next = next and (T(2) ^ state.msb - T(1))
-    echo(next, state.msb)
 
   if state.lsb != 0:
     next = next shr state.lsb
-    echo(next, state.lsb)
 
   state.seed = next
 
