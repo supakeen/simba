@@ -29,9 +29,7 @@ type
 
 proc next*[T](state: LCG[T]): T =
   ## Get the next value for an LCG
-  var next: T
-
-  next = state.a * state.seed + state.c
+  var next: T = state.a * state.seed + state.c
 
   if state.m != 0:
     next = next mod state.m
