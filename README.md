@@ -1,5 +1,10 @@
 # simba
 
+**Note**: this project is still in active development and not all implementations
+have corresponding testcase and as such have not been proven to be correct,
+please hold off on using this until these tests are added and this notice is
+removed.
+
 This project provides implementations of pseudorandom number generators in pure
 Nim. It can be used to generate the same sequences as other PRNGs provided you
 know the parameters they use.
