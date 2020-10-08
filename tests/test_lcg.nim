@@ -16,7 +16,8 @@ suite "simba/lcg/NumericalRecipes":
     let
       prng = newNumericalRecipes()
       vals = @[next(prng), next(prng), next(prng), next(prng), next(prng)]
-    assert vals == @[1015568748'u32, 1586005467'u32, 2165703038'u32, 3027450565'u32, 217083232'u32]
+    assert vals == @[1015568748'u32, 1586005467'u32, 2165703038'u32,
+        3027450565'u32, 217083232'u32]
 
 
 suite "simba/lcg/VB6":
@@ -56,7 +57,8 @@ suite "simba/lcg/MMIX":
     let
       prng = newMMIX()
       vals = @[next(prng), next(prng), next(prng), next(prng), next(prng)]
-    assert vals == @[7806831264735756412'u64, 9396908728118811419'u64, 11960119808228829710'u64, 7062582979898595269'u64, 14673421054488193520'u64]
+    assert vals == @[7806831264735756412'u64, 9396908728118811419'u64,
+        11960119808228829710'u64, 7062582979898595269'u64, 14673421054488193520'u64]
 
 
 suite "simba/lcg/Musl":
@@ -64,4 +66,5 @@ suite "simba/lcg/Musl":
     let
       prng = newMusl()
       vals = @[next(prng), next(prng), next(prng), next(prng), next(prng)]
-    assert vals == @[1481765933'u64, 2009839609'u64, 734534264'u64, 410517546'u64, 836499822'u64]
+    assert vals == @[1481765933'u64, 2009839609'u64, 734534264'u64,
+        410517546'u64, 836499822'u64]

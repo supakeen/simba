@@ -75,7 +75,8 @@ proc newVB6*(seed: uint32 = 1): LCG[uint32] =
 proc newJava*(seed: uint64 = 1): LCG[uint64] =
   ## As used by Java's `java.util.Random`, POSIX `[ln]rand48`, and glibc's
   ## `[ln]rand48[_r]`.
-  LCG[uint64](a: 25214903917'u64, seed: seed, c: 11'u64, m: 2'u64 ^ 48'u64, msb: 48'u64, lsb: 16'u64)
+  LCG[uint64](a: 25214903917'u64, seed: seed, c: 11'u64, m: 2'u64 ^ 48'u64,
+      msb: 48'u64, lsb: 16'u64)
 
 proc newCarbonLib*(seed: uint32 = 1): LCG[uint32] =
   ## LCG in use by Apple CarbonLib and C++11's `minstd_rand0`.
@@ -94,14 +95,16 @@ proc newTurboPascal*(seed: uint32 = 1): LCG[uint32] =
 
 proc newMMIX*(seed: uint64 = 1): LCG[uint64] =
   ## MMIX by Donald Knuth
-  LCG[uint64](a: 6364136223846793005'u64, seed: seed, c: 1442695040888963407'u64, m: 0)
+  LCG[uint64](a: 6364136223846793005'u64, seed: seed,
+      c: 1442695040888963407'u64, m: 0)
 
   # Note that MMIX uses 2 ^ 64 as its `m`, this is all zeros for the width it
   # operates on.
 
 proc newMusl*(seed: uint64 = 1): LCG[uint64] =
   ## Musl and Newlib's LCG.
-  LCG[uint64](a: 6364136223846793005'u64, seed: seed, c: 1'u64, m: 0, msb: 64'u64, lsb: 32'u64)
+  LCG[uint64](a: 6364136223846793005'u64, seed: seed, c: 1'u64, m: 0,
+      msb: 64'u64, lsb: 32'u64)
 
   # Note that Musl uses 2 ^ 64 as its `m`, this is all zeros for the width it
   # operates on.
