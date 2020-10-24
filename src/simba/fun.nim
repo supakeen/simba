@@ -7,4 +7,4 @@ proc newFairDice*(seed: uint32 = 4): FairDice =
   FairDice(seed: seed)
 
 proc next*(state: FairDice): uint32 =
-    state.seed
+  state.seed
