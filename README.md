@@ -45,3 +45,8 @@ skip this library.
 
 - [ ] MT19337
 - [ ] MT19337-64
+
+## Bindings
+
+Work has started on providing Python bindings for `simba`, you can find them in
+the [sarafi](https://github.com/supakeen/sarafi) project.
