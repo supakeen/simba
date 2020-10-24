@@ -73,6 +73,20 @@ suite "simba/lcg":
 
 
 suite "simba/lfsr":
+  test "XorShift32/sequence example":
+    let
+      prng = newXorShift32()
+      vals = @[next(prng), next(prng), next(prng), next(prng), next(prng)]
+
+    assert vals == @[270369'u32, 67634689'u32, 2647435461'u32, 307599695'u32, 2398689233'u32]
+
+  test "XorShift64/sequence example":
+    let
+      prng = newXorShift64()
+      vals = @[next(prng), next(prng), next(prng), next(prng), next(prng)]
+
+    assert vals == @[1082269761'u64, 1152992998833853505'u64, 11177516664432764457'u64, 17678023832001937445'u64, 9659130143999365733'u64]
+
   test "XorShift64s/sequence example":
     let
       prng = newXorShift64s()

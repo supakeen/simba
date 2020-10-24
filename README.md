@@ -31,8 +31,15 @@ skip this library.
 
 ### Linear Feedback Shift Registers
 
-- [ ] xorshift32
+- [x] xorshift32
+- [x] xorshift64
+- [ ] xorshift128
+- [ ] xorwow
 - [x] xorshift64s
+- [ ] xorshift1024s
+- [ ] xoshiro256ss
+- [ ] xoshiro256p
+- [ ] splitmix64
 
 ### Mersenne
 
