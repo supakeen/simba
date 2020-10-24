@@ -1,5 +1,3 @@
-import math
-
 type
   XORSHIFT64S = ref object of RootObj
     a: uint64
