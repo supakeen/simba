@@ -6,18 +6,38 @@ import simba/lfsr
 import simba/fun
 
 suite "simba":
-  test "randbit":
-    assert randbit() == 1
+  test "randBit":
+    assert randBit() == 1
 
-  test "randbits":
-    assert randbits(1) == 1
+  test "randBits":
+    assert randBits(1) == 1
 
-  test "randbyte":
-    assert randbyte() == 1
+  test "randByte":
+    assert randByte() == 1
 
-  test "randbytes":
-    assert randbytes(1) == 1
+  test "randBytes":
+    assert randBytes(1) == 1
 
+  test "randPick":
+    assert randPick() == 1
+
+  test "randPicks":
+    assert randPicks() == 1
+
+  test "randSort":
+    assert randSort() == 1
+
+  test "randInt":
+    assert randInt() == 1
+
+  test "randIntRange":
+    assert randIntRange(0, 1) == 1
+
+  test "randFloat":
+    assert randFloat() == 1.0
+
+  test "randFloatRange":
+    assert randFloatRange(0.0, 1.0) == 1.0
 
 suite "simba/fun":
   test "FairDice/4":

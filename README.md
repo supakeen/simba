@@ -13,6 +13,21 @@ All PRNGs implemented in `simba` are *not* cryptographically secure. If you
 don't know if you need a CSPRNG or a PRNG you should opt for the first one and
 skip this library.
 
+## Usage
+
+```nim
+import simba
+import simba/lcg
+import simba/lfsr
+
+let
+  prng0 = newRANDU()
+  prng1 = newXorShift64s()
+
+echo prng0.randBits(8)
+echo prng1.randBits(8)
+```
+
 ## PRNGs
 
 `simba` currently implements the following types and specific PRNGs. 
