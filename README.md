@@ -15,6 +15,10 @@ skip this library.
 
 ## Usage
 
+`simba` provides a high level API that works across all provided PRNGs. Take
+care that this high level API might implement these functions differently from
+other implementations even if the underlying PRNG yields the same values.
+
 ```nim
 import simba
 import simba/lcg
@@ -26,6 +30,18 @@ let
 
 echo prng0.randBits(8)
 echo prng1.randBits(8)
+```
+
+If you need to do other conversions you can use the PRNGs directly, they will
+yield next values in the correct width.
+
+```nim
+import simba/mersenne
+
+let prng = newMT19937()
+
+echo next(prng)
+echo next(prng)
 ```
 
 ## PRNGs
