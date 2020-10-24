@@ -1,8 +1,23 @@
 import unittest
 
-import simba/fun
+import simba
 import simba/lcg
 import simba/lfsr
+import simba/fun
+
+suite "simba":
+  test "randbit":
+    assert randbit() == 1
+
+  test "randbits":
+    assert randbits(1) == 1
+
+  test "randbyte":
+    assert randbyte() == 1
+
+  test "randbytes":
+    assert randbytes(1) == 1
+
 
 suite "simba/fun":
   test "FairDice/4":
@@ -11,7 +26,6 @@ suite "simba/fun":
       vals = @[next(prng), next(prng), next(prng), next(prng), next(prng)]
 
     assert vals == @[4'u32, 4'u32, 4'u32, 4'u32, 4'u32]
-
 
 suite "simba/lcg":
   test "RANDU/sequence A096555":
@@ -70,7 +84,6 @@ suite "simba/lcg":
       vals = @[next(prng), next(prng), next(prng), next(prng), next(prng)]
     assert vals == @[1481765933'u64, 2009839609'u64, 734534264'u64,
         410517546'u64, 836499822'u64]
-
 
 suite "simba/lfsr":
   test "XorShift32/sequence example":
